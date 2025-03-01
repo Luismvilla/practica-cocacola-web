@@ -26,11 +26,15 @@
                 <a href="#galeria">Galeria</a>
                 <a href="#contactenos">Contáctanos</a>
             </nav>
+            <a href="" class="hamb"><i class="fa-solid fa-bars"></i></a>
         </div>
     </header>
     <main>
         <section id="inicio">
-            <img src="img/bannerprincipal.jpg" alt="">
+            <picture>
+                <source media="(max-width:767px)" srcset="img/bannerprincipal-mobile.jpg">
+                <img src="img/bannerprincipal.jpg" alt="">  
+            </picture>      
             <div class="bloque-inicio">
                 <h1>Bienvenidos a Coca Cola</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
@@ -162,8 +166,8 @@
     </main>
     <footer class="seccion">
         <div class="container">
-            <div class="row">
-                <div class="columna columna-25">
+            <div class="row row-footer">
+                <div class="columna columna-25 columna-100">
                     <img src="img/logo-blanco.png" class="logo-footer" alt="">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, sed ipsam molestias quo nemo laboriosam obcaecati culpas.</p>
                 </div>
@@ -172,9 +176,9 @@
                         Temas relacionados
                     </h3>
                     <ul>
-                        <li><a href="#">Tema 1</a></li>
-                        <li><a href="#">Tema 2</a></li>
-                        <li><a href="#">Tema 3</a></li>
+                        <li><a href="#">Historia de Coca-Cola</a></li>
+                        <li><a href="#">Sostenibilidad </a></li>
+                        <li><a href="#">Comunidad y Responsabilidad Social</a></li>
                     </ul>
                 </div>
                 <div class="columna columna-25">
@@ -184,7 +188,7 @@
                     <ul>
                         <li>villafuertemunhoz@gmail.com</li>
                         <li>+591 60821555</li>
-                        <li>Radial 17 imedio - 4to anillo - barrios los bosques - calle oriente 
+                        <li>avenida Radial 17 imedio - 4to anillo - barrio los bosques - calle oriente 
                         petrolero - casa 211</li>
                     </ul>         
                 </div>
@@ -213,7 +217,7 @@
             </div>
         </div>
         <div class="barra-footer">
-            &copy; Derechos Reservados - 2025 - LuisMv-copyraight
+            &copy; Derechos Reservados - 2025 - LuisMv-copyright
         </div>
     </footer>
 </body>
