@@ -1,3 +1,27 @@
+<?php
+    ob_start(); // Iniciar el buffer de salida
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nombre = trim($_POST["nombre"]);
+        $email = trim($_POST["email"]);
+        $mensaje = trim($_POST["mensaje"]);
+
+        if (!empty($nombre) && !empty($email) && !empty($mensaje)) {
+            $para = "lupuispi93@gmail.com";
+            $asunto = "Esto es una prueba";
+            $cuerpo = "Nombre: $nombre\nEmail: $email\nMensaje:\n$mensaje";
+            $headers = "From: noreply@jacoboamaru.com";
+
+            if (mail($para, $asunto, $cuerpo, $headers)) {
+                header("Location: index.php?status=success");
+                exit(); // Asegurar que el script se detenga aquí
+            } else {
+                header("Location: index.php?status=error");
+                exit();
+            }
+        }
+    }
+    ob_end_flush(); // Finalizar el buffer de salida
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,12 +169,14 @@
                 <div class="container-fluid">
                     <div class="row-form">
                         <div class="columna columna-50">
-                            <form action="" method="post">
+                            <form id="miFormulario" action="index.php" method="post">
                                 <div class="form-block">
-                                    <input type="text" name="nombre" class="form-control" placeholder="Escribe tu Nombre">
+                                <input type="text" name="nombre" class="form-control"
+                                placeholder="Escribe tu Nombre">
                                 </div>
                                 <div class="form-block">
-                                    <input type="email" name="email" class="form-control" placeholder="Escribe tu Email">
+                                    <input type="email" name="email" class="form-control"
+                                    placeholder="Escribe tu Email">
                                 </div>
                                 <div class="form-block">
                                     <textarea name="mensaje" placeholder="Description" id=""></textarea>
@@ -158,6 +184,7 @@
                                 <div class="form-block bloque-ultimo">
                                     <input type="submit" class="boton boton-negro" value="Enviar">
                                 </div>
+                                
                             </form>
                         </div>
                     </div>
@@ -220,5 +247,7 @@
             &copy; Derechos Reservados - 2025 - LuisMv-copyright
         </div>
     </footer>
+    <script src="js/jquery.js"></script>
+    <script src="js/funciones.js"></script>
 </body>
 </html>

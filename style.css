@@ -38,6 +38,7 @@ header .container a {
 .hamb {
     display: none;
     font-size: 30px;
+    position: relative;
 }
 
 header .container a:hover {
@@ -397,6 +398,10 @@ footer ul li {
         flex-direction: column;
         transition: all 0.4s ease;
         transform: translateX(100%);
+    }
+
+    header > .container > nav.open {
+        transform: translateX(0);
     }
 
     header > .container > nav > a {
